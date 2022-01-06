@@ -1,0 +1,157 @@
+
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 30, 30);
+    flex-direction: column;
+    text-align: center;
+    
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.mb{
+    border: white solid 2px;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+	margin: 5vw;
+    border-radius: 20px;
+    padding: 5vh;
+    color: white;
+}
+.start{
+    font-size: xx-large;
+    margin-top: 10vh;
+}
+.start button{
+    width: 60vw;
+    padding: 2vh;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    color: #ce0808;
+    border: none;
+    margin-top: 5vh;
+    font-size: 1.5rem;
+    transition: all 1s linear;
+}
+.start button:hover{
+    background: white;
+}
+
+.ng{
+    display: none;
+    width: 75vw;
+    background: white;
+    height: 90vw;
+	border-radius: 20% 10%;
+    position: absolute;
+    top: 0;
+    transform: translateY(40%) ;
+    left: 8%;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 10px;
+    color: red;
+    border: 7px solid black;
+    flex-direction: column;
+    
+}
+.ng button{
+    margin-top: 5vh;
+    border: none;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    padding: 1.5vh 10vw;
+	color: aliceblue;
+    font-size: 1.2rem;
+    
+}
+#ng2{    
+    display: none;
+}
+#ng1{    
+    display: none;
+}
+#ng3{    
+    display: none;
+}
+.dare{
+    display: none;
+    width: 75vw;
+    background: white;
+    height: 90vw;
+	border-radius: 20% 10%;
+    position: absolute;
+    top: 0;
+    transform: translateY(40%) ;
+    left: 8%;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 10px;
+    color: red;
+    border: 7px solid black;
+    flex-direction: column;
+    
+}
+
+.options div{
+	width: 80%;
+    padding: 1vh;
+    margin: 2vh;
+    background: white;
+    border: none;
+    border-radius: 2px;
+	box-shadow: 0 0 15px black;
+}
+.options div:hover{
+    background: black;
+    color: white;
+}
+.so{
+    width: 50vw;
+    margin-top: 5vh;
+    border: none;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    color: white;
+    padding: 2vh 3vh;
+    border-radius: 20%;
+    font-size: 1.2rem;
+    transition: all linear 0.5s;
+}
+html{
+    background:rgb(255, 30, 30) ;
+}
+.so:hover{
+    color: red;
+    border-radius: 0%;
+}
+#s:hover{
+    background-color: green !important;
+}
+.gs{
+    height: 93vh;
+}
+.options{
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+.bck{
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    opacity: 0.7;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}

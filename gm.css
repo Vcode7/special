@@ -1,0 +1,48 @@
+.gs2{
+	width: 80vw;
+    display:none;
+}
+.gs3{
+	width: 80vw;
+    display:none;
+}
+.gs4{
+	width: 80vw;
+    display:none;
+}
+.gs5{
+	width: 80vw;
+    display:none;
+}
+.gs1{
+	width: 80vw;
+}
+.gs{
+    overflow: hidden;
+    overflow-y: scroll;
+	padding-bottom: 5vh;
+}
+.i{
+    margin: 5vh 0;
+    margin-left: 5px;
+    width: 100%;
+    box-shadow: 0 0 5px white;
+    height: 50vh;
+    border: 10px solid black;
+    border-radius: 10% 0% 0% 10%;
+}
+.i1{
+    background: url('img/s1.png')no-repeat center center/cover;
+}
+.i2{
+    background: url('img/s2.png')no-repeat center center/cover;
+}
+.i3{
+    background: url('img/s3.png')no-repeat center center/cover;
+}
+.i4{
+    background: url('img/s4.png')no-repeat center center/cover;
+}
+.i5{
+    background: url('img/s5.png')no-repeat center center/cover;
+}

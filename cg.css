@@ -1,0 +1,38 @@
+.cg5{
+    width: 80vw;
+    display: none;
+}
+.cg4{
+    width: 80vw;
+    display: none;
+}
+.cg3{
+    display: none;
+    width: 80vw;
+}
+.cg2{
+    display: none;
+    width: 80vw;
+}
+.cg1{
+    width: 80vw;}
+
+.cg{
+    overflow: hidden;
+    overflow-y: scroll;
+	padding-bottom: 5vh;
+}
+.ci{
+    margin: 5vh 0vw;
+	margin-left: -2vw;
+    width: 100%;
+    overflow: scroll;
+    background: black;
+    box-shadow: 0 0 5px white;
+    height: 40vh;
+    border: 10px solid black;
+    border-radius: 0% 0% 0% 0%;
+}
+img{
+    width: 100%;
+}

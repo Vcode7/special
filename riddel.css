@@ -1,0 +1,21 @@
+.riddel2{
+    display: none;
+}
+.riddel3{
+    display: none;
+}
+.riddel4{
+    display: none;
+}
+.riddel5{
+    display: none;
+}
+.que{
+    border: white solid 1px;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+	margin: 5vw;
+    border-radius: 20px;
+    padding: 5vh;
+    margin-bottom: 7vh;
+    color: white;
+}

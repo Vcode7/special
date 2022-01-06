@@ -1,0 +1,34 @@
+section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/images.jpeg')no-repeat center center/cover;
+}
+body{
+    overflow: hidden;
+}
+.done{
+    width: 60vw;
+    padding: 5px 20px;
+    font-size: 1.1rem;
+    border: none;
+    margin-top: -30px;
+    border-radius: 10% 30%;
+}
+.done:hover{
+    background: red;
+    border-radius: 30% 10%;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.dare{
+    width: 90%;
+    color: white;
+    min-height: 30vh;
+}
