@@ -1,16 +1,7 @@
 let a1 = /mom/i;
 let a2 = /dad/i;
-let a3 = /g/i;
-let a4 = /g/i;
-
-let ca1 = document.querySelector('.gc1')
-let ca2 = document.querySelector('.gc2')
-let ca3 = document.querySelector('.gc3')
-let ca4 = document.querySelector('.gc4')
-
-const darescr = document.querySelector('.dare');
-
-let bck = document.querySelector('.bck')
+let a3 = /chanchal/i;
+let a4 = /prajna/i;
 
 let rca1 = document.querySelector('.rc1')
 let rca2 = document.querySelector('.rc2')
@@ -21,8 +12,59 @@ let iv1 = document.getElementsByClassName('inp')[0];
 let iv2 = document.getElementsByClassName('inp')[1];
 let iv3 = document.getElementsByClassName('inp')[2];
 let iv4 = document.getElementsByClassName('inp')[3];
+let bck = document.querySelector('.bck')
 
-let c = 0;
+
+var ra1 = "mom";
+var ra2 = "dad";
+var ra3 = "f";
+var ra4 = "g";
+
+
+let ca1 = document.querySelector('.gc1')
+let ca2 = document.querySelector('.gc2')
+let ca3 = document.querySelector('.gc3')
+let ca4 = document.querySelector('.gc4')
+
+const darescr = document.querySelector('.dare');
+
+let ary = JSON.parse(localStorage.getItem('ary'));
+
+
+
+dp = localStorage.getItem('q')
+localStorage.setItem('e',dp)
+if (dp == 1) {
+    ca1.style.display = "none"
+    ca2.style.display = "block"
+}
+else if (dp == 2) {
+    ca1.style.display = "none"
+    ca3.style.display = "block"
+
+}
+else if (dp == 3) {
+    ca1.style.display = "none"
+    ca4.style.display = "block"
+
+}
+else if (dp == 4) {
+    ca1.style.display = "none"
+    ca5.style.display = "block"
+
+}
+else if (dp == 5) {
+    ca1.style.display = "none"
+    rca4.style.display = "block"
+    localStorage.setItem('q', 0)
+}
+
+else {
+    ca1.style.display = "block"
+}
+
+
+
 function chkans(n) {
     switch (n) {
         case 1:
@@ -64,6 +106,7 @@ function chkans(n) {
 }
 
 function nextq(n) {
+
     bck.style.display = "none"
     switch (n) {
 
@@ -96,49 +139,11 @@ function nextq(n) {
     }
 }
 
-function dare(n) {
-    bck.style.display = "block"
-    var r = Math.floor(Math.random() * 10)
-    var dr = document.createElement('div')
-    dr.classList.add('rs');
-    if (r==0 || r==11) {
-        darepath = `src/dare10.html`
-        
-    }
-    else{
-        darepath = `src/dare${r}.html`
-
-    }
-    dr.innerHTML = `<a href="${darepath}" ><button class="btn">click here</button></a>`
-    darescr.append(dr)
-    localStorage.setItem('page', 5);
-
-    switch (n) {
-        case 1:
-            ca1.style.display = "none"
-            break;
-        case 2:
-            ca2.style.display = "none"
-
-            break;
-        case 3:
-            ca3.style.display = "none"
-
-            break;
-        case 4:
-            ca4.style.display = "none"
-
-            break;
-
-        default:
-            break;
-    }
-
-    darescr.style.display = "flex"
-}
-
 function rightans(n) {
+    localStorage.setItem('q', n)
+
     bck.style.display = "block"
+    
     switch (n) {
         case 1:
             ca1.style.display = 'none';
@@ -164,4 +169,45 @@ function rightans(n) {
         default:
             break;
     }
+}
+
+
+
+
+function dare(n,ra) {
+
+    bck.style.display = "block"
+    var r = Math.ceil(Math.random() * ary.length)
+    ary = ary.filter(item => item !== r)
+    localStorage.setItem('ary', JSON.stringify(ary))
+    var dr = document.createElement('div')
+    dr.classList.add('rs');
+    darepath = `src/dare${r}.html`
+    dr.innerHTML = `<p>right ans : ${ra}</p><a href="${darepath}" ><button class="btn">click here</button></a>`
+    darescr.append(dr)
+    localStorage.setItem('page', 5);
+    localStorage.setItem('q', n)
+
+    switch (n) {
+        case 1:
+            ca1.style.display = "none"
+            break;
+        case 2:
+            ca2.style.display = "none"
+
+            break;
+        case 3:
+            ca3.style.display = "none"
+
+            break;
+        case 4:
+            ca4.style.display = "none"
+
+            break;
+
+        default:
+            break;
+    }
+
+    darescr.style.display = "flex"
 }

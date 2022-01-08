@@ -60,6 +60,10 @@ section{
     flex-direction: column;
     
 }
+.ng p{
+    margin-top: 20px;
+    padding: 20px;
+}
 .ng button{
     margin-top: 5vh;
     border: none;
@@ -100,6 +104,22 @@ section{
     
 }
 
+.btn{
+    width: 40vw;
+    margin-top: 20px;
+    border: none;
+    background: black;
+    color: red;
+    border-radius: 15px ;
+    font-size: 1rem;
+    padding: 10px;
+
+}
+.btn:hover{
+    background: red;
+    color: black;
+}
+
 .options div{
 	width: 80%;
     padding: 1vh;
@@ -130,10 +150,10 @@ html{
 .so:hover{
     color: red;
     border-radius: 0%;
-}
+}/*
 #s:hover{
     background-color: green !important;
-}
+}*/
 .gs{
     height: 93vh;
 }

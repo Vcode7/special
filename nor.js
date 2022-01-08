@@ -5,6 +5,14 @@ ra4 = /heroine/i;
 ra5 = /inkstand/i;
 ra6 = /eye/i;
 
+
+ran1 = "eat";
+ran2 = "chain";
+ran3 = "and";
+ran4 = "heroine";
+ran5 = "inkstand";
+ran6 = "eye";
+
 const r1 = document.querySelector('.r1');
 const r2 = document.querySelector('.r2');
 const r3 = document.querySelector('.r3');
@@ -29,8 +37,8 @@ let iv4 = document.getElementsByClassName('inp')[3];
 let iv5 = document.getElementsByClassName('inp')[4];
 let iv6 = document.getElementsByClassName('inp')[5];
 
-
-
+ary = JSON.parse(localStorage.getItem('ary'))
+ 
 let dp = 0;
 dp = localStorage.getItem('q')
 if (dp == 1) {
@@ -71,7 +79,7 @@ else {
 
 
 
-let c = 0;
+let c = 1;
 function chkans(n) {
     setTimeout(() => {
 
@@ -85,7 +93,7 @@ function chkans(n) {
                 else {
                     if (c == 0) {
                         c = 2;
-                        dare(1)
+                        dare(1,ran1)
                     }
                     else {
                         alert(`wrong ans chance left ${c}`)
@@ -101,7 +109,7 @@ function chkans(n) {
                 else {
                     if (c == 0) {
                         c = 2;
-                        dare(2)
+                        dare(2,ran2)
                     }
                     else {
                         alert(`wrong ans chance left ${c}`)
@@ -112,7 +120,7 @@ function chkans(n) {
                 break;
             case 3:
                 if (ra3.test(iv3.value)) {
-                    rightans(3)
+                    rightans(3,ran3)
                 }
                 else {
                     if (c == 0) {
@@ -133,7 +141,7 @@ function chkans(n) {
                 else {
                     if (c == 0) {
                         c = 2;
-                        dare(4)
+                        dare(4,ran4)
                     }
                     else {
                         alert(`wrong ans chance left ${c}`)
@@ -149,7 +157,7 @@ function chkans(n) {
                 else {
                     if (c == 0) {
                         c = 2;
-                        dare(5)
+                        dare(5,ran5)
                     }
                     else {
                         alert(`wrong ans chance left ${c}`)
@@ -165,7 +173,7 @@ function chkans(n) {
                 else {
                     if (c == 0) {
                         c = 2;
-                        dare(6)
+                        dare(6,ran6)
                     }
                     else {
                         alert(`wrong ans chance left ${c}`)
@@ -261,21 +269,18 @@ function nextq(n) {
     }
 }
 
-function dare(n) {
+
+
+function dare(n,ra) {
 
     bck.style.display = "block"
-    var r = Math.floor(Math.random() * 10)
+    var r = Math.ceil(Math.random() * ary.length)
+    ary = ary.filter(item => item !== r)
+    localStorage.setItem('ary',JSON.stringify(ary))
     var dr = document.createElement('div')
     dr.classList.add('rs');
-    if (r == 0 || r == 11) {
-        darepath = `src/dare10.html`
-
-    }
-    else {
-        darepath = `src/dare${r}.html`
-
-    }
-    dr.innerHTML = `<a href="${darepath}" ><button class="btn">click here</button></a>`
+    darepath = `src/dare${r}.html`
+    dr.innerHTML = `<p>right ans : ${ra}</p><a href="${darepath}" ><button class="btn">click here</button></a>`
     darescr.append(dr)
     localStorage.setItem('page', 4);
     localStorage.setItem('q', n)
@@ -309,7 +314,6 @@ function dare(n) {
         default:
             break;
     }
-
-    darescr.style.display = "flex"
+  darescr.style.display = "flex"
 }
 

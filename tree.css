@@ -1,5 +1,6 @@
 :root {
-	--main-bg: #ce0d0d;
+
+	--main-bg: rgb(255, 30, 30);
 	--trunk-bg-1: #5e2100;
 	--trunk-bg-2: #783e00;
 	--leaves-bottom-bg-1: #0f980f;

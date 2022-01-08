@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .mb{
+		background-color: black;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .i{
+        display: flex;
+        width: 100%;
+        position: relative;
+        top: -1000px;
+        justify-content: center;
+        animation: i 2s linear forwards;
+        
+    }
+    .love{
+		display: flex;
+        margin-top: -50px;
+    }
+	.love div{
+        font-size: 4.5rem;
+        color: red;
+        position: relative;
+    }
+	.love div:nth-child(1){
+        top: -500px;
+        animation: l1 3s 5s linear forwards;
+    }
+    @keyframes l1 {
+        to{
+            top: 0;
+        }
+    }
+	.love div:nth-child(2){
+        right: -500px;
+        animation: l2 2s 5s linear forwards;
+
+    }
+
+    @keyframes l2 {
+        to{
+            right: 0;
+        }
+    }
+	.love div:nth-child(3){
+        animation: l3 2s 5s linear forwards;
+        bottom: -500px;
+    }
+
+    @keyframes l3 {
+        to{
+            bottom: 0;
+        }
+    }
+	.love div:nth-child(4){
+        left: -500px;
+        animation: l4 2s 5s linear forwards;
+    }
+
+    @keyframes l4 {
+        to{
+            left: 0;
+        }
+    }
+    .you{
+		display: flex;
+    }
+	.you div{
+        font-size: 4.5rem;
+        color: red;
+            opacity: 0;
+        position: relative;
+        animation: u 3s 7s linear forwards;
+    }
+
+	@keyframes u {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+    .i span{
+        display: block;
+        background: red;
+        width: 15px;
+        position: relative;
+    }
+	@keyframes i {
+        100%{
+            top:0;
+        }
+    }
+    .i span:nth-child(1){
+        height: 60px;
+        animation: i1 1s linear forwards;
+        animation-delay: 3s;
+    }
+    @keyframes i1 {
+        
+        100%{
+			left: 10px;
+            transform: rotate(90deg) translateX(-30px);
+
+        }
+    }
+
+    @keyframes i3 {
+        
+        100%{
+        	right: 10px;
+            margin-top: 100px;
+            transform: rotate(-90deg) translateX(50px);
+        }
+    }
+    .i span:nth-child(2){
+        height: 80px;
+        
+    }
+    .i span:nth-child(3){
+        animation: i3 1s linear forwards;
+        animation-delay: 3s;
+        right: 0px;
+
+        height: 60px;
+    }
+</style>
+<body>
+    <div class="mb">
+        <div class="i">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="love">
+            <div class="h11">L</div>
+            <div class="h12">o</div>
+            <div class="h13">v</div>
+            <div class="h14 ">e</div>
+        </div>
+        <div class="you">
+            <div class="h1">Y</div>
+            <div class="h2">o</div>
+            <div class="h3">u</div>
+        </div>
+    </div>
+</body>
+
+</html>
