@@ -175,3 +175,14 @@ html{
     left: 0;
     z-index: 1;
 }
+
+
+.gm{
+    color: black;
+    text-align: center;
+    margin-top: 40vh;
+    margin-left: 40vw;
+    color: white;
+    z-index: 12;
+    display: none;
+}

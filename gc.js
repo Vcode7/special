@@ -8,6 +8,10 @@ let rca2 = document.querySelector('.rc2')
 let rca3 = document.querySelector('.rc3')
 let rca4 = document.querySelector('.rc4')
 
+const sec = document.querySelector('section');
+const gm = document.querySelector('.gm');
+
+
 let iv1 = document.getElementsByClassName('inp')[0];
 let iv2 = document.getElementsByClassName('inp')[1];
 let iv3 = document.getElementsByClassName('inp')[2];
@@ -41,6 +45,13 @@ if (dp == 1) {
 else if (dp == 2) {
     ca1.style.display = "none"
     ca3.style.display = "block"
+
+}
+
+else if (dp==9) {
+    sec.style.display = 'none'
+    r.style.display = 'flex'
+    bck.style.display = 'block'
 
 }
 else if (dp == 3) {
@@ -177,7 +188,18 @@ function rightans(n) {
 function dare(n,ra) {
 
     bck.style.display = "block"
-    var r = Math.ceil(Math.random() * ary.length)
+    rn = Math.floor(Math.random() * ary.length)
+    var r = ary[rn]
+    if (r == undefined) {
+        sec.style.display = 'none'
+    localStorage.setItem('q', 9)
+    gm.style.display = 'flex'
+        bck.style.display = 'block'
+    }
+    else{
+    if (r==0) {
+        r = 1
+    }
     ary = ary.filter(item => item !== r)
     localStorage.setItem('ary', JSON.stringify(ary))
     var dr = document.createElement('div')
@@ -210,4 +232,5 @@ function dare(n,ra) {
     }
 
     darescr.style.display = "flex"
+}
 }

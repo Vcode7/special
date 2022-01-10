@@ -19,6 +19,8 @@ const r3 = document.querySelector('.r3');
 const r4 = document.querySelector('.r4');
 const r5 = document.querySelector('.r5');
 const r6 = document.querySelector('.r6');
+const sec = document.querySelector('section');
+const gm = document.querySelector('.gm');
 const darescr = document.querySelector('.dare');
 
 let sra1 = document.querySelector('.ra1');
@@ -55,6 +57,13 @@ else if (dp == 3) {
     r4.style.display = "flex"
 
 }
+
+else if (dp==9) {
+    sec.style.display = 'none'
+    r.style.display = 'flex'
+    bck.style.display = 'block'
+
+}
 else if (dp == 4) {
     r1.style.display = "none"
     r5.style.display = "flex"
@@ -79,7 +88,7 @@ else {
 
 
 
-let c = 1;
+let c = 0;
 function chkans(n) {
     setTimeout(() => {
 
@@ -270,11 +279,23 @@ function nextq(n) {
 }
 
 
+let rr = 0;
 
 function dare(n,ra) {
 
     bck.style.display = "block"
-    var r = Math.ceil(Math.random() * ary.length)
+    rn = Math.floor(Math.random() * ary.length)
+    var r = ary[rn]
+    if (r == undefined) {
+        sec.style.display = 'none'
+    localStorage.setItem('q', 9)
+    gm.style.display = 'flex'
+        bck.style.display = 'block'
+    }
+    else{
+    if (r==0) {
+        r = 1
+    }
     ary = ary.filter(item => item !== r)
     localStorage.setItem('ary',JSON.stringify(ary))
     var dr = document.createElement('div')
@@ -315,5 +336,6 @@ function dare(n,ra) {
             break;
     }
   darescr.style.display = "flex"
+}
 }
 

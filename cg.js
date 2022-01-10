@@ -9,6 +9,9 @@ let bck = document.querySelector('.bck')
 const so = document.getElementsByClassName('so')
 const o = document.getElementsByClassName('options')
 
+const gm = document.querySelector('.gm');
+
+
 let darescr = document.querySelector('.dare')
 
 ary = JSON.parse(localStorage.getItem('ary'));
@@ -27,6 +30,13 @@ if (dp == 1) {
 else if (dp == 2) {
     r1.style.display = "none"
     r3.style.display = "block"
+
+}
+
+else if (dp==9) {
+    sec.style.display = 'none'
+    r.style.display = 'flex'
+    bck.style.display = 'block'
 
 }
 else if (dp == 3) {
@@ -114,7 +124,18 @@ function showoptions(n) {
 function dare(n,ra) {
 
     bck.style.display = "block"
-    var r = Math.ceil(Math.random() * ary.length)
+    rn = Math.floor(Math.random() * ary.length)
+    var r = ary[rn]
+    if (r == undefined) {
+        r.style.display = 'none'
+        gm.style.display = 'flex'
+    localStorage.setItem('q', 9)
+    bck.style.display = 'block'
+    }
+    else{
+    if (r==0) {
+        r = 1
+    }
     ary = ary.filter(item => item !== r)
     localStorage.setItem('ary',JSON.stringify(ary))
     var dr = document.createElement('div')
@@ -145,4 +166,5 @@ function dare(n,ra) {
             break;
     }
     darescr.style.display = "flex"
+}
 }

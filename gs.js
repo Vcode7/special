@@ -11,6 +11,8 @@ const so = document.getElementsByClassName('so2')
 const o = document.getElementsByClassName('options')
 let darescr = document.querySelector('.dare')
 
+const gm = document.querySelector('.gm');
+
 ary = JSON.parse(localStorage.getItem('ary'));
 
 ra1 = "zindagi ek safar hai suhanaz";
@@ -27,6 +29,12 @@ if (dp == 1) {
 else if (dp == 2) {
     r1.style.display = "none"
     r3.style.display = "block"
+
+}
+else if (dp==9) {
+    sec.style.display = 'none'
+    r.style.display = 'flex'
+    bck.style.display = 'block'
 
 }
 else if (dp == 3) {
@@ -129,7 +137,16 @@ function showoptions(n) {
 function dare(n,ra) {
 
     bck.style.display = "block"
-    var r = Math.ceil(Math.random() * ary.length)
+    rn = Math.floor(Math.random() * ary.length)
+    var r = ary[rn]
+    if (r == undefined) {
+        sec.style.display = 'none'
+        r.style.display = 'flex'
+        bck.style.display = 'block'
+    }
+    if (r==0) {
+        r = 1
+    }
     ary = ary.filter(item => item !== r)
     localStorage.setItem('ary',JSON.stringify(ary))
     var dr = document.createElement('div')

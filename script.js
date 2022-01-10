@@ -6,6 +6,8 @@ const r4 = document.querySelector('.riddel4')
 const r5 = document.querySelector('.riddel5')
 const ng1 = document.querySelector('#ng1')
 const r = document.querySelector('section')
+const gm = document.querySelector('.gm');
+
 const bck = document.querySelector('#background')
 const so = document.getElementsByClassName('so')
 const darescr = document.querySelector('.dare')
@@ -29,6 +31,13 @@ if (dp == 1) {
 else if (dp == 2) {
     r1.style.display = "none"
     r3.style.display = "block"
+
+}
+
+else if (dp==9) {
+    sec.style.display = 'none'
+    r.style.display = 'flex'
+    bck.style.display = 'block'
 
 }
 else if (dp == 3) {
@@ -134,11 +143,21 @@ function showoptions(n) {
     }, 1000);
 }
 
-
+let rr = 0;
 function dare(n,ra) {
 
     bck.style.display = "block"
-    var r = Math.ceil(Math.random() * ary.length)
+    rn = Math.floor(Math.random() * ary.length)
+    var r = ary[rn]
+    if (r == 'undefined') {
+        sec.style.display = 'none'
+        r.style.display = 'flex'
+        bck.style.display = 'block'
+    }
+    if (r==0) {
+        r = 1
+    }
+
     ary = ary.filter(item => item !== r)
     localStorage.setItem('ary',JSON.stringify(ary))
     var dr = document.createElement('div')
